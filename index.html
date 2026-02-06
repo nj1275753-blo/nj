@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Kevin 🎉</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+  overflow:hidden;
+}
+canvas{
+  position:fixed;
+  top:0; left:0;
+  pointer-events:none;
+}
+.page{
+  display:none;
+  min-height:100vh;
+  padding:30px;
+  text-align:center;
+}
+.page.active{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+h1{font-size:2rem;margin-bottom:15px;}
+p{font-size:1.1rem;max-width:650px;}
+button{
+  margin-top:15px;
+  padding:14px 26px;
+  border-radius:30px;
+  border:none;
+  background:#ff4d6d;
+  color:white;
+  cursor:pointer;
+}
+.options button{
+  display:block;
+  width:85%;
+  max-width:320px;
+  margin:8px auto;
+}
+input{
+  margin-top:12px;
+  padding:10px;
+  width:80%;
+  max-width:300px;
+  border-radius:20px;
+  border:none;
+}
+.bouquet{
+  font-size:5rem;
+  cursor:pointer;
+}
+#secret,#playful{
+  display:none;
+  background:rgba(255,255,255,0.4);
+  padding:20px;
+  border-radius:20px;
+  margin-top:15px;
+}
+#scoreBox{
+  margin-top:20px;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confetti"></canvas>
+
+<!-- START -->
+<div class="page active">
+  <h1>🎂 Happy Birthday Kevin 🎉</h1>
+  <p>This little journey is just for you.</p>
+  <button onclick="next()">Start 🚀</button>
+</div>
+
+<!-- QUESTIONS 1–8 -->
+<div class="page">
+  <h1>Question 1 😎</h1>
+  <p>On your birthday, what’s your natural state?</p>
+  <div class="options">
+    <button onclick="answer()">Acting cool but secretly happy</button>
+    <button onclick="answer()">Smiling for no reason</button>
+    <button onclick="answer()">Enjoying the attention</button>
+  </div>
+  <input placeholder="Type your own…" onkeydown="if(event.key==='Enter')answer()">
+</div>
+
+<div class="page">
+  <h1>Question 2 🎵</h1>
+  <p>If today had a theme song, it would be:</p>
+  <div class="options">
+    <button onclick="answer()">Something hype</button>
+    <button onclick="answer()">Something chill</button>
+    <button onclick="answer()">Whatever’s stuck in my head</button>
+  </div>
+  <input placeholder="Type your own…" onkeydown="if(event.key==='Enter')answer()">
+</div>
+
+<div class="page">
+  <h1>Question 3 🔥</h1>
+  <p>What kind of birthday energy do you bring?</p>
+  <div class="options">
+    <button onclick="answer()">Main-character energy</button>
+    <button onclick="answer()">Quiet confidence</button>
+    <button onclick="answer()">Chaos in a good way</button>
+  </div>
+  <input placeholder="Type your own…" onkeydown="if(event.key==='Enter')answer()">
+</div>
+
+<div class="page">
+  <h1>Question 4 💌</h1>
+  <p>One thing you pretend you don’t want but totally do:</p>
+  <div class="options">
+    <button onclick="answer()">Compliments</button>
+    <button onclick="answer()">Appreciation</button>
+  </div>
+  <input placeholder="Type your own…" onkeydown="if(event.key==='Enter')answer()">
+</div>
+
+<div class="page">
+  <h1>Question 5 👀</h1>
+  <p>Am I a good friend?</p>
+  <div class="options">
+    <button onclick="answer()">Yes, always 🤍</button>
+    <button onclick="answer()">Without a doubt</button>
+    <button onclick="answer()">I appreciate you</button>
+  </div>
+</div>
+
+<div class="page">
+  <h1>Question 6 😅</h1>
+  <p>Do I ever feel annoying?</p>
+  <div class="options">
+    <button onclick="answer()">Never</button>
+    <button onclick="answer()">Only in a funny way</button>
+    <button onclick="answer()">That’s part of you</button>
+  </div>
+</div>
+
+<div class="page">
+  <h1>Question 7 🫶</h1>
+  <p>What do I bring into your life?</p>
+  <div class="options">
+    <button onclick="answer()">Support</button>
+    <button onclick="answer()">Laughter</button>
+    <button onclick="answer()">Comfort & chaos 😄</button>
+  </div>
+</div>
+
+<div class="page">
+  <h1>Question 8 🤯</h1>
+  <p>If your birthday could whisper a secret about you to the universe, what would it say?</p>
+  <div class="options">
+    <button onclick="answer()">I’m more awesome than I realize ✨</button>
+    <button onclick="answer()">I love surprises 🎁</button>
+    <button onclick="answer()">Today is chaotic and perfect 😅</button>
+  </div>
+  <input placeholder="Type your own…" onkeydown="if(event.key==='Enter')answer()">
+</div>
+
+<!-- PUZZLES -->
+<div class="page">
+  <h1>Emoji Puzzle Time 🎬🎶</h1>
+
+  <button onclick="puzzle('🦁👑','lion king')">🦁👑</button>
+  <button onclick="puzzle('🏎️🔥💨','fast and furious')">🏎️🔥💨</button>
+
+  <p><small>C
